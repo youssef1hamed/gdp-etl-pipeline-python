@@ -28,8 +28,4 @@ The final data is persisted in two formats:
 ## 🚀 How to Run
 1. **Clone the repository**:
    ```bash
-<<<<<<< HEAD
-   git clone [https://github.com/YOUR_USERNAME/gdp-etl-pipeline-python.git](https://github.com/YOUR_USERNAME/gdp-etl-pipeline-python.git)
-=======
    git clone [https://github.com/youssef1hamed/gdp-etl-pipeline-python.git](https://github.com/youssef1hamed/gdp-etl-pipeline-python.git)
->>>>>>> 283b9f2 (Saving local ETL project files before rebase)
