@@ -1,0 +1,36 @@
+name: Monthly GDP ETL Update
+
+on:
+  schedule:
+    # Runs at 00:00 on the 1st of every month
+    - cron: '0 0 1 * *'
+  workflow_dispatch: # Allows you to run it manually via the Actions tab
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install pandas beautifulsoup4 numpy requests sqlite3
+
+      - name: Run ETL Script
+        run: python etl_project_gdp.py
+
+      - name: Commit and Push changes
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add Countries_by_GDP.csv World_Economies.db etl_project_log.txt
+          git commit -m "Automated monthly ETL update" || echo "No changes to commit"
+          git push

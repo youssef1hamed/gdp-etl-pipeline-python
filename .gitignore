@@ -1,0 +1,22 @@
+# Python bytecode
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Project specific: 
+# Usually, we don't track the actual DB or CSV in large projects, 
+# but for a portfolio project, it is okay to leave these commented 
+# out so recruiters can see your output files immediately.
+# World_Economies.db
+# Countries_by_GDP.csv
